@@ -12,7 +12,7 @@ if(len(sys.argv) != 2):
     print("Error: Input arguments are of the form: input geometry, e.g:\nvor_pack.py geom.stl\nPLease check inputs and try again")
     exit()
 
-if(sys.argv[1][-3:] != '.stl'):
+if(sys.argv[1][-4:] != '.stl'):
     print('Error: Input geometry must be an stl file')
     exit()
 
@@ -44,7 +44,7 @@ def main():
     tic = time.perf_counter()
     points = disk_sampling()
     toc = time.perf_counter()
-    print('COMPLETE\n')
+    print('COMPLETE')
     print(f'time elapsed {toc - tic}\n')
 
 
