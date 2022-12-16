@@ -31,8 +31,10 @@ xmin,ymin,zmin = bb[0]
 xmax,ymax,zmax = xmin+width,ymin+depth,zmin+height
 
 #user defined size distribution
-#read from csv file format: two tab seperated columns: Diamater  volume/mass percentage
-size_dist = pd.read_csv(f'./{input_PSD}',delimiter='\t', names=['diam','vol_passing'])
+try:
+    size_dist = pd.read_csv(f'./{input_PSD}',delimiter='\t', names=['diam','vol_passing'])
+except:
+    'failed to read input PSD, format: two tab seperated columns: diam  percent_passing'
 size_dist['diam'] = size_dist['diam']/1000 #convert from μm to m
 size_dist['rad'] = size_dist['diam']/2
 #create frequency column
@@ -247,7 +249,7 @@ def trim_mesh(particles: np.ndarray) -> np.ndarray:
 def output(particles: np.ndarray):
     '''writes particle positions to output_file, optionally uncomment some of the code to produce grpahs'''
     # Write output files
-    with open(output_file,'a') as file:
+    with open(output_file,'w') as file:
         for i,v in enumerate(particles):
             file.write(f'{v[0]} {v[1]} {v[2]} {v[3]}\n')
 
