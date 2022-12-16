@@ -1,13 +1,22 @@
-# vor-pack  !In Progress!
-fast particle packing algorythim for arbitrary shaped regions using voro++ and trimesh.
+# vor-pack - A fast particle packing algorythim for arbitrary shaped regions.
 
-to run the code use
+to run the code use:
 
-``` python voro_pack.py input_geom.stl PSD.csv output_file.txt ```
+``` python voro_pack.py input_geom input_PSD output_file```
 
-included are a number of example stl files and potential particle size distributions to test.
+input_geom
+-This must be the path to a watertight mesh in stl file format
 
-Known bugs
-code may intermittently fail in the disk sampling function when trying to place paricle outside of the initlaised grid. This happens approx 1/20 times you run the code. I plan to completely overhall this function in the future.
+input_PSD
+-This must be the path to a tab seperated PSD distribution in csv or txt file format representing sived particle data.
 
-Voronoi digram might intermittently fail if useing an stl much larger than the ones included in the repository. This is because I was too lazy to make this function generalisable. Will fix this in the near future.
+format: two tab seperated columns: Diamater and volume/mass percentage passing
+
+output_file
+-This must be the path to the file where you want to write the final particle postions to
+
+format: x y z r
+
+To be added:
+- 2D Jupyter notebook with examples
+- some test PSD
