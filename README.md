@@ -10,12 +10,14 @@ It is capable of constructing clumps of highly polydisperse particles, where the
 The code is writen in python and relies on several third party depedancies.
 
 To istall all dependacies run the following in your terminal
-'''pip install pyvoro
+```
+pip install pyvoro
 pip install trimesh
 pip install cvxpy
 pip install numpy
 pip install pandas
-pip install matplotlib'''
+pip install matplotlib
+```
 
 or equivelent in your chosen package manager
 
