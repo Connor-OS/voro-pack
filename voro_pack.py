@@ -181,6 +181,7 @@ def lloyds(particles: np.ndarray,steps: np.ndarray) -> np.ndarray:
                 scale += growth_rate
             else:
                 scale = 1
+            energy_func /= len(particles)
             print(f'Voronoi relaxation step {step}',end='\r')
             step += 1
     print(f'Tolerance reached after step {step}')
